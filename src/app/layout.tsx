@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Taylor — Senior Product Software Engineer",
+  title: "Taylor Dugger — Senior Software Engineer",
   description: "Personal site and role fit evaluator",
 };
 

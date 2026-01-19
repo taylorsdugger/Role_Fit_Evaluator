@@ -4,9 +4,9 @@ export default function Home() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-4xl font-bold mb-4">Taylor</h1>
+        <h1 className="text-4xl font-bold mb-4">Taylor Dugger</h1>
         <p className="text-lg text-gray-700 dark:text-gray-300">
-          Senior Product Software Engineer
+          Senior Software Engineer
         </p>
       </div>
 
