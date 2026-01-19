@@ -2,10 +2,12 @@
 
 import { OpenRouter } from "@openrouter/sdk";
 import { ROLE_FIT_SYSTEM_PROMPT } from "./roleFitPrompt";
+import { getProfile, type ProfileType } from "./profiles";
 
 export interface RoleFitRequest {
   jobDescription: string;
   company?: string;
+  profile: ProfileType;
 }
 
 export interface RoleFitResponse {
@@ -21,6 +23,8 @@ export async function evaluateRoleFit(
     throw new Error("OPENROUTER_API_KEY environment variable not set");
   }
 
+  const candidateProfile = getProfile(request.profile);
+
   const openrouter = new OpenRouter({
     apiKey,
   });
@@ -35,6 +39,10 @@ export async function evaluateRoleFit(
       {
         role: "system",
         content: ROLE_FIT_SYSTEM_PROMPT,
+      },
+      {
+        role: "user",
+        content: candidateProfile,
       },
       {
         role: "user",

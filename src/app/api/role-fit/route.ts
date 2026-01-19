@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { evaluateRoleFit, RoleFitRequest, RoleFitResponse } from "@/lib/openrouter";
+import { type ProfileType } from "@/lib/profiles";
 
 export async function POST(request: NextRequest): Promise<NextResponse<RoleFitResponse | { error: string }>> {
   try {
@@ -21,6 +22,15 @@ export async function POST(request: NextRequest): Promise<NextResponse<RoleFitRe
       );
     }
 
+    // Validate profile field
+    const validProfiles: ProfileType[] = ["senior-eng", "em"];
+    if (!body.profile || !validProfiles.includes(body.profile)) {
+      return NextResponse.json(
+        { error: "profile must be 'senior-eng' or 'em'" },
+        { status: 400 }
+      );
+    }
+
     // Limit job description length to prevent token overflow
     if (body.jobDescription.length > 10000) {
       return NextResponse.json(
@@ -32,6 +42,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<RoleFitRe
     const roleFitRequest: RoleFitRequest = {
       jobDescription: body.jobDescription,
       company: body.company,
+      profile: body.profile,
     };
 
     const result = await evaluateRoleFit(roleFitRequest);

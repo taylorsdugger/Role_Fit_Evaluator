@@ -1,25 +1,43 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { type ProfileType } from "@/lib/profiles";
 
 interface RoleFitFormProps {
-  onSubmit: (jobDescription: string, company?: string) => void;
+  onSubmit: (jobDescription: string, company?: string, profile?: ProfileType) => void;
   isLoading: boolean;
 }
 
 export function RoleFitForm({ onSubmit, isLoading }: RoleFitFormProps) {
   const [jobDescription, setJobDescription] = useState("");
   const [company, setCompany] = useState("");
+  const [profile, setProfile] = useState<ProfileType>("senior-eng");
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (jobDescription.trim()) {
-      onSubmit(jobDescription.trim(), company.trim() || undefined);
+      onSubmit(jobDescription.trim(), company.trim() || undefined, profile);
     }
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4 max-w-2xl">
+      <div>
+        <label htmlFor="profile" className="block text-sm font-medium mb-2">
+          Role Profile
+        </label>
+        <select
+          id="profile"
+          value={profile}
+          onChange={(e) => setProfile(e.target.value as ProfileType)}
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          disabled={isLoading}
+        >
+          <option value="senior-eng">Senior Engineer</option>
+          <option value="em">Engineering Manager</option>
+        </select>
+      </div>
+
       <div>
         <label htmlFor="company" className="block text-sm font-medium mb-2">
           Company (optional)

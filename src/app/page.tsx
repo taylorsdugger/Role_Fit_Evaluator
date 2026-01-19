@@ -12,16 +12,13 @@ export default function Home() {
 
       <div className="prose dark:prose-invert max-w-none space-y-4 text-gray-700 dark:text-gray-300">
         <p>
-          I build products that solve real problems. I&apos;ve worked on B2B SaaS, marketplaces, and platform-adjacent systems.
+          Senior software engineer with 8+ years of experience designing, building, and scaling customer-facing and backend systems in production environments. Strong focus on system reliability, performance, testability, and operational excellence. Experienced technical lead who collaborates closely with product and design while coaching teammates and driving quality across the development lifecycle.
         </p>
 
         <p>
           This site is an attempt to make my thinking inspectable. Not a resume, not a portfolio—just how I reason about problems and work.
         </p>
 
-        <p>
-          Everything here is minimal. If it doesn&apos;t increase clarity, it was left out.
-        </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">

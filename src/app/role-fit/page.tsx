@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { type ProfileType } from "@/lib/profiles";
 import { RoleFitForm } from "@/components/RoleFitForm";
 import { RoleFitResult } from "@/components/RoleFitResult";
 
@@ -9,7 +10,11 @@ export default function RoleFitPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const handleEvaluate = async (jobDescription: string, company?: string) => {
+  const handleEvaluate = async (
+    jobDescription: string,
+    company?: string,
+    profile?: ProfileType
+  ) => {
     setIsLoading(true);
     setError(null);
     setResult(null);
@@ -23,6 +28,7 @@ export default function RoleFitPage() {
         body: JSON.stringify({
           jobDescription,
           company,
+          profile: profile || "senior-eng",
         }),
       });
 
