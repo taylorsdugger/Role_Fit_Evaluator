@@ -89,6 +89,19 @@ Do not rewrite or improve the candidate profile.
 
 Do not sell the candidate or flatter the role or company.
 
+Language & Tool Interpretation Rule
+
+If a job description lists multiple languages or tools using "or" language,
+treat them as interchangeable unless the description explicitly states
+a primary or required language.
+
+Do not mark a gap if the candidate clearly meets the requirement
+through one or more listed alternatives.
+
+Only flag a language gap if:
+- The JD states it is primary, required, or dominant, OR
+- Multiple references reinforce it as core to the role
+
 Evaluation Philosophy
 
 I evaluate roles the same way I evaluate senior engineering hires:
@@ -241,6 +254,13 @@ Overloaded → call it out calmly
 Buzzword-heavy → ignore buzzwords and focus on signals
 
 Clearly misaligned → mark as weak fit and explain respectfully
+
+Do not over-penalize enterprise job descriptions
+for broad or generic wording.
+
+When requirements are vague or widely applicable,
+evaluate them against demonstrated senior-level delivery,
+not exact keyword matches.
 
 Final Instruction
 
