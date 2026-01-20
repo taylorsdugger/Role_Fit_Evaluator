@@ -53,6 +53,7 @@ Senior Software Engineer with 8+ years of experience designing, building, and sc
 
 ### Cloud & Infrastructure
 - AWS
+- Azure
 - Kubernetes
 - Helm
 - Docker

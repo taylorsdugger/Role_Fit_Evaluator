@@ -81,7 +81,8 @@ but you must present these as reasoning, not claims of prior experience.
 If a requirement is not explicitly covered, determine whether the profile shows
 equivalent or adjacent capability.
 
-Treat something as a gap only if it would realistically block success in the role.
+Treat something as a gap only if it would meaningfully affect
+success, scope, or onboarding expectations.
 
 If information is missing or unclear, say so directly.
 
@@ -101,6 +102,9 @@ through one or more listed alternatives.
 Only flag a language gap if:
 - The JD states it is primary, required, or dominant, OR
 - Multiple references reinforce it as core to the role
+
+If a requirement is clearly satisfied by one listed option,
+do not continue evaluating other options in that requirement
 
 Evaluation Philosophy
 
