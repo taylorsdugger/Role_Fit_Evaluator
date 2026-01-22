@@ -23,10 +23,10 @@ export async function POST(request: NextRequest): Promise<NextResponse<RoleFitRe
     }
 
     // Validate profile field
-    const validProfiles: ProfileType[] = ["senior-eng", "em"];
+    const validProfiles: ProfileType[] = ["senior-eng"];
     if (!body.profile || !validProfiles.includes(body.profile)) {
       return NextResponse.json(
-        { error: "profile must be 'senior-eng' or 'em'" },
+        { error: "profile must be 'senior-eng'" },
         { status: 400 }
       );
     }

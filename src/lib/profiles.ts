@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-export type ProfileType = "senior-eng" | "em";
+export type ProfileType = "senior-eng";
 
 export interface Profile {
   id: ProfileType;
@@ -22,10 +22,8 @@ function loadProfiles(): Map<ProfileType, string> {
     process.cwd(),
     "src/lib/candidate.senior-eng.md"
   );
-  const emPath = path.join(process.cwd(), "src/lib/candidate.em.md");
 
   cachedProfiles.set("senior-eng", fs.readFileSync(seniorEngPath, "utf8"));
-  cachedProfiles.set("em", fs.readFileSync(emPath, "utf8"));
 
   return cachedProfiles;
 }
@@ -48,11 +46,6 @@ export function getAllProfiles(): Profile[] {
       id: "senior-eng",
       label: "Senior Engineer",
       content: profiles.get("senior-eng")!,
-    },
-    {
-      id: "em",
-      label: "Engineering Manager",
-      content: profiles.get("em")!,
     },
   ];
 }
