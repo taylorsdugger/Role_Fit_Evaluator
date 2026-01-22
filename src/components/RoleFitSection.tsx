@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Alert from '@mui/material/Alert';
+import { track } from '@vercel/analytics';
 import { type ProfileType } from "@/lib/profiles";
 import { RoleFitForm } from "./RoleFitForm";
 import { RoleFitResult } from "./RoleFitResult";
@@ -23,9 +24,6 @@ export function RoleFitSection() {
     setIsLoading(true);
     setError(null);
     setResult(null);
-
-    // Debugging: Log that function is called
-    console.log("handleEvaluate called with:", { jobDescription, company, profile });
 
     try {
       const response = await fetch("/api/role-fit", {
@@ -48,9 +46,8 @@ export function RoleFitSection() {
       }
 
       const data = await response.json();
-      console.log("Evaluation result received:", data);
       setResult(data.result);
-      
+
       // Auto-scroll to results
       setTimeout(() => {
         const resultElement = document.getElementById('fit-results');
