@@ -1,14 +1,16 @@
+import React from 'react';
+import Box from '@mui/material/Box';
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <>
+    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', bgcolor: 'background.default' }}>
       <Header />
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <Box component="main" sx={{ flexGrow: 1 }}>
         {children}
-      </main>
+      </Box>
       <Footer />
-    </>
+    </Box>
   );
 }

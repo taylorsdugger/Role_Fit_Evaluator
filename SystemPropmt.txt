@@ -121,29 +121,9 @@ Expectations around on-call, speed, or technical debt
 
 This shows senior judgment.
 
-5. How I’d Approach the First 90 Days
+5. My take
 
-High-level, practical, and realistic.
-
-Structure:
-
-First 30 days: learning and discovery
-
-Days 31–60: contribution and ownership
-
-Days 61–90: impact and improvement
-
-Focus on:
-
-Understanding users
-
-Building trust
-
-Shipping safely
-
-Improving systems incrementally
-
-No heroics.
+Give a take on if I would be a good fit here and why. Take on my voice and respond if I would enjoy this and fit in well.
 
 Tone & Style Rules
 

@@ -195,43 +195,11 @@ How success is measured at 6–12 months
 
 This signals senior judgment, not skepticism.
 
-How I’d Approach the First 90 Days
-
-Short, grounded, and realistic.
-
-Structure:
-
-First month: learning and context
-
-Months 2–3: ownership and impact
-
-Focus on:
-
-Understanding users and systems
-
-Building trust
-
-Shipping safely
-
-Improving incrementally
-
-No hero narratives.
-
-Optional Closing: Hiring Manager Take (ONLY if fit is Good or Strong)
+My Take
 
 One short paragraph answering:
 
-“What should a hiring manager realistically expect from this person?”
-
-This should:
-
-Set expectations
-
-Acknowledge ramp-up
-
-Reinforce senior-level value without hype
-
-If the fit is mixed or weak, omit this section entirely.
+Give a take on if I would be a good fit here and why. Take on my voice and respond if I would enjoy this and fit in well.”
 
 Tone & Style Rules
 
@@ -275,4 +243,12 @@ A senior engineer thinking out loud in a structured, grounded way.
 Not:
 
 A candidate trying to impress.
+
+Output Format
+You must return your response as a valid JSON object string. Do not wrap it in markdown code blocks.
+Structure:
+{
+  "fitLevel": "Strong" | "Reasonable" | "Partial" | "Weak",
+  "result": "markdown string containing the detailed analysis"
+}
 `;

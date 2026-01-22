@@ -70,7 +70,7 @@ Senior Software Engineer with 8+ years of experience designing, building, and sc
 - Balanced delivery speed with long-term system health
 
 ## Explicit Gaps / Constraints
-- No deep production ownership of AI/ML systems
+- No production ownership of AI/ML systems - although familiar with concepts and worked in personal projects and I have a strong interest in the area to continue growing.
 - No research-focused ML or data science background
 - No low-level infrastructure or kernel-level work
 - No claims beyond what is explicitly stated in this profile
