@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Layout } from "@/components/Layout";
 import "./globals.css";
 import ThemeRegistry from "@/components/ThemeRegistry";
@@ -32,6 +33,7 @@ export default function RootLayout({
       >
         <ThemeRegistry>
           <Analytics />
+          <SpeedInsights />
           <Layout>{children}</Layout>
         </ThemeRegistry>
       </body>
