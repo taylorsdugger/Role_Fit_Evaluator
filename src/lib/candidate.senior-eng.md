@@ -63,6 +63,11 @@ Senior Software Engineer with 8+ years of experience designing, building, and sc
 - Unit, integration, and end-to-end testing (Jest, Vitest, Playwright, Cucumber)
 - Monitoring and alerting (Datadog, Prometheus)
 
+### AI & Developer Tooling
+- GitHub Copilot
+- LLM-assisted development workflows
+- Evaluation of AI libraries and SDKs for application integration 
+
 ## Collaboration & Leadership
 - Mentored junior and mid-level engineers
 - Led technical design discussions and reviews
@@ -70,7 +75,8 @@ Senior Software Engineer with 8+ years of experience designing, building, and sc
 - Balanced delivery speed with long-term system health
 
 ## Explicit Gaps / Constraints
-- No production ownership of AI/ML systems - although familiar with concepts and worked in personal projects and I have a strong interest in the area to continue growing.
 - No research-focused ML or data science background
 - No low-level infrastructure or kernel-level work
 - No claims beyond what is explicitly stated in this profile
+- Limited formal experience with performance reviews, compensation, or HR processes
+- No org-level headcount planning or budgeting ownership
