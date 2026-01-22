@@ -28,6 +28,7 @@ export function RoleFitSection() {
     try {
       const response = await fetch("/api/role-fit", {
         method: "POST",
+        cache: 'no-store',
         headers: {
           "Content-Type": "application/json",
         },

@@ -1,5 +1,3 @@
-"use server";
-
 import { OpenRouter } from "@openrouter/sdk";
 import { ROLE_FIT_SYSTEM_PROMPT } from "./roleFitPrompt";
 import { getProfile, type ProfileType } from "./profiles";

@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { evaluateRoleFit, RoleFitRequest, RoleFitResponse } from "@/lib/openrouter";
 import { type ProfileType } from "@/lib/profiles";
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(request: NextRequest): Promise<NextResponse<RoleFitResponse | { error: string }>> {
   try {
     const body = await request.json();
