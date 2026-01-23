@@ -35,27 +35,8 @@ It reflects how I personally evaluate roles before applying or continuing conver
 Why build this instead of a resume bot?
 Because senior engineering value is better demonstrated through reasoning than claims.
 
-### 2. Case Studies
-
-A small set of deeper write-ups covering:
-
-- Context and constraints
-- Key decisions and tradeoffs
-- Business impact
-- What I would do differently now
-
-These are not polished success stories.
-They are meant to reflect real-world decision-making.
-
-### 3. Minimal Writing
-
-Occasional short posts to explain why I built something or what I learned doing so.
-
-This is not a content platform.
-
 ## What this is not
 
-- Not an attempt to brand myself as an AI expert
 - Not a portfolio of flashy UI or side projects
 - Not optimized for SEO or growth
 - Not a demonstration of every tool I've ever used
@@ -69,6 +50,7 @@ If something does not increase clarity or trust, it was left out.
 - Next.js (App Router)
 - TypeScript (strict)
 - Node.js
+- React & MUI
 - Deployed on Vercel (Hobby tier)
 
 ### AI integration
@@ -78,9 +60,6 @@ If something does not increase clarity or trust, it was left out.
 - No client-side AI calls
 - No conversation memory
 - Conservative generation settings
-
-The AI component is intentionally narrow.
-It exists to support judgment, not replace it.
 
 ## Setup & Deployment
 
@@ -158,16 +137,6 @@ If something feels clever, it's probably wrong.
 - Everything here should be easy to explain and defend live
 
 These are conscious decisions, not omissions.
-
-## If you're reviewing this as a hiring manager
-
-Start with:
-
-1. The Role Fit Evaluator
-2. A case study
-3. The code structure
-
-If that gives you a clear sense of how I think, this site has done its job.
 
 ## Questions or feedback
 
