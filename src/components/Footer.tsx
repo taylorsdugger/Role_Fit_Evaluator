@@ -52,8 +52,11 @@ export function Footer() {
         </Grid>
 
         <Box sx={{ borderTop: 1, borderColor: 'divider', pt: 4, textAlign: 'center' }}>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="text.secondary" gutterBottom>
             © {currentYear} Taylor Dugger. All rights reserved.
+          </Typography>
+          <Typography variant="caption" color="text.secondary" sx={{ opacity: 0.7 }}>
+             Built with Next.js & React. Deployed on Vercel with PostHog analytics.
           </Typography>
         </Box>
       </Container>
