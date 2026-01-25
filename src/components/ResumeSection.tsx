@@ -7,9 +7,12 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import DownloadIcon from '@mui/icons-material/Download';
 import Paper from '@mui/material/Paper';
+import { usePostHog } from 'posthog-js/react';
 import { ScrollAnimation } from "./ScrollAnimation";
 
 export function ResumeSection() {
+  const posthog = usePostHog();
+
   return (
     <Box component="section" id="resume" sx={{ py: { xs: 8, md: 16 } }}>
       <Container maxWidth="lg">
@@ -36,8 +39,9 @@ export function ResumeSection() {
               size="large"
               href="/Taylor_Dugger_Resume.pdf"
               download="Taylor_Dugger_Resume.pdf"
+              onClick={() => posthog.capture('resume_downloaded')}
               endIcon={<DownloadIcon />}
-              sx={{ 
+              sx={{  
                   fontSize: '1.1rem', 
                   px: 5, py: 1.5,
                   fontWeight: 600

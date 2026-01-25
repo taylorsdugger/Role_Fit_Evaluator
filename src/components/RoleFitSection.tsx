@@ -6,12 +6,14 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Alert from '@mui/material/Alert';
 import { track } from '@vercel/analytics';
+import { usePostHog } from 'posthog-js/react';
 import { type ProfileType } from "@/lib/profiles";
 import { RoleFitForm } from "./RoleFitForm";
 import { RoleFitResult } from "./RoleFitResult";
 import { ScrollAnimation } from "./ScrollAnimation";
 
 export function RoleFitSection() {
+  const posthog = usePostHog();
   const [result, setResult] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -24,6 +26,14 @@ export function RoleFitSection() {
     setIsLoading(true);
     setError(null);
     setResult(null);
+    
+    // Track with PostHog (Full content)
+    posthog.capture('role_fit_submitted', {
+        job_description: jobDescription,
+        job_description_length: jobDescription.length,
+        company: company || 'Not provided',
+        profile_type: profile || 'senior-eng'
+    });
 
     try {
       const response = await fetch("/api/role-fit", {

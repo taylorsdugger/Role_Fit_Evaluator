@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Layout } from "@/components/Layout";
 import "./globals.css";
 import ThemeRegistry from "@/components/ThemeRegistry";
+import { CSPostHogProvider } from "./providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,11 +32,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeRegistry>
-          <Analytics />
-          <SpeedInsights />
-          <Layout>{children}</Layout>
-        </ThemeRegistry>
+        <CSPostHogProvider>
+          <ThemeRegistry>
+            <Analytics />
+            <SpeedInsights />
+            <Layout>{children}</Layout>
+          </ThemeRegistry>
+        </CSPostHogProvider>
       </body>
     </html>
   );

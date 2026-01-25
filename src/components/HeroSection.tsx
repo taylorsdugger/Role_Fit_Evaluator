@@ -7,10 +7,14 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { usePostHog } from 'posthog-js/react';
 import { ScrollAnimation } from "./ScrollAnimation";
 
 export function HeroSection() {
+  const posthog = usePostHog();
+
   const handleScrollToRoleFit = () => {
+    posthog.capture('ask_ai_about_me_clicked');
     const element = document.getElementById("role-fit-section");
     element?.scrollIntoView({ behavior: "smooth" });
   };
