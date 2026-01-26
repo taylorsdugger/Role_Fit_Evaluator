@@ -13,7 +13,7 @@ const workExperience: WorkExperience[] = [
       title: "Staff / Senior Software Engineer (Team Lead)",
       dates: "2019–2026",
       description:
-         "Staff/Senior Software Engineer | 6+ years building the marketplace platform connecting 20K+ field service providers with enterprise customers. Architected the new marketplace matching and search system that reduced search times by 70%, designed microservices handling 50K+ requests daily, and established architecture standards used across 5+ engineering teams.",
+         "Senior → Staff Software Engineer | 6+ years building the marketplace platform connecting 20K+ field service providers with enterprise customers. Architected the new marketplace matching and search system that reduced search times by 70%, designed microservices handling 50K+ requests daily, and established architecture standards used across 5+ engineering teams.",
    },
    {
       company: "C.H. Robinson",
