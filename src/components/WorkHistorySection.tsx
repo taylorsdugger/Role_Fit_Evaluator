@@ -14,34 +14,34 @@ const workExperience: WorkExperience[] = [
     title: "Staff / Senior Software Engineer (Team Lead)",
     dates: "2019–2026",
     description:
-      "I led engineering teams building large-scale web products, with a focus on performance, reliability, and user experience. I owned the technical direction for a new search and matching experience, helped establish shared UI and architecture standards, and worked closely with product and design to deliver meaningful improvements."
+      "Senior → Staff Software Engineer | 6+ years building the marketplace platform connecting 20K+ field service providers with enterprise customers. Architected the new marketplace matching and search system that reduced search times by 70%, designed microservices handling 50K+ requests daily, and established architecture standards used across 5+ engineering teams.",
   },
   {
     company: "C.H. Robinson",
     title: "Software Engineer I / II",
     dates: "2017–2019",
     description:
-      "I worked on a B2B supply chain visibility platform supporting a rapidly growing customer base. I led a frontend modernization from Angular to React to improve usability and performance, contributed to backend APIs, and helped introduce team practices that improved code quality.",
+      "Junior Engineer → Team Lead | Led a B2B supply chain visibility platform through 500% customer growth. Rebuilt the frontend from AngularJS to React, modernizing our tech stack and reducing load times by 60%+. Built .NET APIs powering real-time tracking for 30M+ shipments annually.",
   },
 ];
 
 export function WorkHistorySection() {
   return (
     <Box component="section" id="work-history" sx={{ py: { xs: 10, md: 20 }, bgcolor: 'background.paper' }}>
-       <Container maxWidth="lg">
-          <ScrollAnimation>
-            <Box>
-               <Typography variant="h3" component="h2" fontWeight="bold" gutterBottom sx={{ mb: 6 }}>
-                  Work History
-               </Typography>
-               <Stack spacing={4}>
-                  {workExperience.map((xp, index) => (
-                      <WorkHistoryCard key={index} experience={xp} />
-                  ))}
-               </Stack>
-            </Box>
-          </ScrollAnimation>
-       </Container>
+      <Container maxWidth="lg">
+        <ScrollAnimation>
+          <Box>
+            <Typography variant="h3" component="h2" fontWeight="bold" gutterBottom sx={{ mb: 6 }}>
+              Work History
+            </Typography>
+            <Stack spacing={4}>
+              {workExperience.map((xp, index) => (
+                <WorkHistoryCard key={index} experience={xp} />
+              ))}
+            </Stack>
+          </Box>
+        </ScrollAnimation>
+      </Container>
     </Box>
   );
 }
