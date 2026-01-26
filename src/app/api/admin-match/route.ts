@@ -45,9 +45,10 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const apiKey = process.env.OPENROUTER_API_KEY;
+    // Use admin-specific API key if available, otherwise fall back to regular key
+    const apiKey = process.env.OPENROUTER_ADMIN_API_KEY || process.env.OPENROUTER_API_KEY;
     if (!apiKey) {
-      console.error("OPENROUTER_API_KEY environment variable not set");
+      console.error("OPENROUTER_ADMIN_API_KEY or OPENROUTER_API_KEY environment variable not set");
       return NextResponse.json(
         { error: "Server configuration error" },
         { status: 500 }

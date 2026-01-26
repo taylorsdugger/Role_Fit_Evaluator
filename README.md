@@ -98,7 +98,8 @@ A private admin route is available at `/admin` for advanced ATS resume matching 
 
 **Environment Variables Required:**
 ```bash
-OPENROUTER_API_KEY=your_key_here
+OPENROUTER_API_KEY=your_public_key_here
+OPENROUTER_ADMIN_API_KEY=your_admin_key_here  # Optional: separate key for admin usage tracking
 ADMIN_USER=your_username
 ADMIN_PASS=your_password
 ```
@@ -123,7 +124,8 @@ vercel
 ```
 
 **Environment Variables on Vercel:**
-- Add `OPENROUTER_API_KEY` to your Vercel project settings
+- Add `OPENROUTER_API_KEY` to your Vercel project settings (for public role-fit page)
+- Add `OPENROUTER_ADMIN_API_KEY` for admin page (optional, falls back to OPENROUTER_API_KEY if not set)
 - Add `ADMIN_USER` and `ADMIN_PASS` for admin page access (optional, only if using /admin)
 
 ### Key Implementation Details
