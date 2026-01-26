@@ -79,6 +79,30 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) to view the site.
 
+### Admin Page (Private)
+
+A private admin route is available at `/admin` for advanced ATS resume matching analysis.
+
+**Access:**
+- Protected by HTTP Basic Authentication
+- Set `ADMIN_USER` and `ADMIN_PASS` environment variables
+- Browser will prompt for credentials when accessing `/admin`
+
+**Features:**
+- Upload job description and resume text
+- ATS keyword matching analysis
+- Match score calculation (0-100)
+- Missing keyword identification
+- Resume optimization suggestions
+- Bullet point rewrites with reasoning
+
+**Environment Variables Required:**
+```bash
+OPENROUTER_API_KEY=your_key_here
+ADMIN_USER=your_username
+ADMIN_PASS=your_password
+```
+
 ### Building for Production
 
 ```bash
@@ -100,6 +124,7 @@ vercel
 
 **Environment Variables on Vercel:**
 - Add `OPENROUTER_API_KEY` to your Vercel project settings
+- Add `ADMIN_USER` and `ADMIN_PASS` for admin page access (optional, only if using /admin)
 
 ### Key Implementation Details
 
