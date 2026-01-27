@@ -45,7 +45,7 @@ interface MatchResult {
 }
 
 const MODELS = [
-  { value: "google/gemini-2.0-flash-exp:free", label: "Gemini 2.0 Flash", description: "Fast, experimental, free" },
+  { value: "google/gemini-2.5-flash-lite", label: "Gemini 2.5 Lite", description: "Fast, experimental, almost free" },
   { value: "anthropic/claude-3.5-haiku", label: "Claude 3.5 Haiku", description: "Balanced, affordable (~$0.001)" },
   { value: "openai/gpt-4o-mini", label: "GPT-4o Mini", description: "Reliable, mid-tier (~$0.0015)" },
   { value: "anthropic/claude-3.5-sonnet", label: "Claude 3.5 Sonnet", description: "Best reasoning, premium (~$0.015)" },
