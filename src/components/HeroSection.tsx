@@ -42,7 +42,7 @@ export function HeroSection() {
                     Taylor Dugger
                 </Typography>
                 <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 600, lineHeight: 1.6, fontWeight: 400 }}>
-                    Senior full-stack engineer with 8+ years of experience building user-focused web products. I specialize in React-based applications and Node.js-backed systems, with a focus on performance, reliability, and thoughtful technical ownership from idea to production.
+                    I'm a senior software engineer who builds infrastructure that makes products work at scale. Over 8 years, I've built marketplace matching systems, event-driven microservices, and platform APIs that multiple teams depend on. The kind of work where 'it just works' is the highest compliment.
                 </Typography>
             </Box>
 

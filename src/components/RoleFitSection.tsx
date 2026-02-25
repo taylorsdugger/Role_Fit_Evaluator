@@ -15,6 +15,7 @@ import { ScrollAnimation } from "./ScrollAnimation";
 export function RoleFitSection() {
   const posthog = usePostHog();
   const [result, setResult] = useState<string | null>(null);
+  const [fitLevel, setFitLevel] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -26,6 +27,7 @@ export function RoleFitSection() {
     setIsLoading(true);
     setError(null);
     setResult(null);
+    setFitLevel(null);
     
     // Track with PostHog (Full content)
     posthog.capture('role_fit_submitted', {
@@ -58,6 +60,7 @@ export function RoleFitSection() {
 
       const data = await response.json();
       setResult(data.result);
+      setFitLevel(data.fitLevel ?? null);
 
       // Auto-scroll to results
       setTimeout(() => {
@@ -107,7 +110,7 @@ export function RoleFitSection() {
         {result && (
             <Box sx={{ scrollMarginTop: '100px' }} id="fit-results">
                 <ScrollAnimation>
-                    <RoleFitResult result={result} />
+                    <RoleFitResult result={result} fitLevel={fitLevel ?? undefined} />
                 </ScrollAnimation>
             </Box>
         )}

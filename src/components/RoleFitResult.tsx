@@ -13,28 +13,11 @@ import CancelIcon from '@mui/icons-material/Cancel';
 
 interface RoleFitResultProps {
   result: string;
+  fitLevel?: string;
 }
 
-export function RoleFitResult({ result }: RoleFitResultProps) {
-  let content = result;
-  let fitLevel = "Unknown";
-
-  try {
-      // Clean up markdown code blocks if present in the raw string before parsing
-      const cleanJson = result.replace(/^```json\n|\n```$/g, '').trim();
-      
-      if (cleanJson.trim().startsWith('{') && cleanJson.trim().endsWith('}')) {
-          const parsed = JSON.parse(cleanJson);
-          if (parsed.result) {
-              content = parsed.result;
-          }
-          if (parsed.fitLevel) {
-              fitLevel = parsed.fitLevel;
-          }
-      }
-  } catch (e) {
-      console.warn("Failed to parse result as JSON, using raw text", e);
-  }
+export function RoleFitResult({ result, fitLevel = "Unknown" }: RoleFitResultProps) {
+  const content = result;
 
   const getFitIndicator = (level: string) => {
       switch (level) {

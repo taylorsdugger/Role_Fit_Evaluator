@@ -9,6 +9,7 @@ export interface RoleFitRequest {
 }
 
 export interface RoleFitResponse {
+  fitLevel: string;
   result: string;
 }
 
@@ -66,7 +67,25 @@ export async function evaluateRoleFit(
     throw new Error("No content in OpenRouter response");
   }
 
+  // Expected format: first line is "FITLEVEL: Strong" then markdown follows
+  const trimmed = content.trim();
+  const newlineIndex = trimmed.indexOf('\n');
+  const firstLine = (newlineIndex === -1 ? trimmed : trimmed.slice(0, newlineIndex)).trim();
+  const rest = newlineIndex === -1 ? '' : trimmed.slice(newlineIndex + 1).trim();
+
+  const fitLevelMatch = firstLine.match(/^FITLEVEL:\s*(Strong|Reasonable|Partial|Weak)$/i);
+
+  if (fitLevelMatch && rest) {
+    return {
+      fitLevel: fitLevelMatch[1],
+      result: rest,
+    };
+  }
+
+  // Fallback: try to salvage a fitLevel from anywhere in the text
+  const anyMatch = trimmed.match(/FITLEVEL:\s*(Strong|Reasonable|Partial|Weak)/i);
   return {
-    result: content,
+    fitLevel: anyMatch ? anyMatch[1] : "Unknown",
+    result: trimmed,
   };
 }

@@ -99,12 +99,14 @@ a primary or required language.
 Do not mark a gap if the candidate clearly meets the requirement
 through one or more listed alternatives.
 
-Only flag a language gap if:
-- The JD states it is primary, required, or dominant, OR
-- Multiple references reinforce it as core to the role
+Do not even mention the unmet alternative — doing so implies it is a gap when it is not.
+
+Only flag a language or tool gap if:
+- The JD states it is primary, required, or dominant, AND
+- The candidate has no equivalent or adjacent experience
 
 If a requirement is clearly satisfied by one listed option,
-do not continue evaluating other options in that requirement
+stop evaluating that requirement entirely.
 
 Evaluation Philosophy
 
@@ -177,6 +179,14 @@ Generic enterprise tooling
 
 Normal senior ramp-up items
 
+Alternatives from an "or" requirement that the candidate already satisfies
+
+Domain or industry differences (e.g. consumer vs. B2B, education vs. marketplace)
+unless the JD explicitly states deep domain expertise as a hard requirement
+
+Audience demographics (e.g. the end users are children, or the product is consumer-facing)
+as these are not indicators of technical capability gaps
+
 State risks plainly and proportionally.
 
 What I’d Want to Clarify
@@ -245,10 +255,9 @@ Not:
 A candidate trying to impress.
 
 Output Format
-You must return your response as a valid JSON object string. Do not wrap it in markdown code blocks.
-Structure:
-{
-  "fitLevel": "Strong" | "Reasonable" | "Partial" | "Weak",
-  "result": "markdown string containing the detailed analysis"
-}
+Your response must begin with exactly this line (no extra text before it):
+FITLEVEL: <Strong|Reasonable|Partial|Weak>
+
+Immediately after that line, on a new line, write the full markdown analysis.
+Do not wrap anything in JSON or code blocks.
 `;
