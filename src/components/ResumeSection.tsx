@@ -37,8 +37,8 @@ export function ResumeSection() {
             <Button
               variant="contained"
               size="large"
-              href="/Taylor_Dugger_Resume.pdf"
-              download="Taylor_Dugger_Resume.pdf"
+              href="/Taylor_Dugger__Resume.pdf"
+              download="Taylor_Dugger__Resume.pdf"
               onClick={() => posthog.capture('resume_downloaded')}
               endIcon={<DownloadIcon />}
               sx={{  

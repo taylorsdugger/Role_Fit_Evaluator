@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Provider Match — Architecture</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #f8f9fa;
+    font-family: 'Inter', sans-serif;
+    color: #1a1a2e;
+    padding: 48px 32px;
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  /* HEADER */
+  .header {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .header h1 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111;
+    letter-spacing: -0.01em;
+  }
+
+  .header p {
+    font-size: 12px;
+    color: #888;
+    margin-top: 4px;
+  }
+
+  /* SECTION */
+  .section {
+    margin-bottom: 8px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 8px;
+    padding-left: 2px;
+  }
+
+  .row {
+    display: flex;
+    gap: 10px;
+  }
+
+  /* NODE */
+  .node {
+    flex: 1;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 14px 16px;
+    border-top: 3px solid #e5e7eb;
+  }
+
+  .node.accent-blue  { border-top-color: #3b82f6; }
+  .node.accent-indigo { border-top-color: #6366f1; }
+  .node.accent-violet { border-top-color: #8b5cf6; }
+  .node.accent-green { border-top-color: #22c55e; }
+  .node.accent-amber { border-top-color: #f59e0b; }
+  .node.accent-slate { border-top-color: #64748b; }
+
+  .node-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 4px;
+  }
+
+  .node-desc {
+    font-size: 11.5px;
+    color: #6b7280;
+    line-height: 1.6;
+  }
+
+  .node-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 10px;
+  }
+
+  .tag {
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 7px;
+    border-radius: 4px;
+    background: #f3f4f6;
+    color: #374151;
+    border: 1px solid #e5e7eb;
+  }
+
+  /* CONNECTOR */
+  .connector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    padding: 4px 0;
+    position: relative;
+  }
+
+  .connector-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+  }
+
+  .conn-line {
+    width: 1px;
+    height: 20px;
+    background: #d1d5db;
+  }
+
+  .conn-arrow {
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid #d1d5db;
+  }
+
+  .conn-label {
+    font-size: 9.5px;
+    color: #9ca3af;
+    margin-top: 3px;
+    letter-spacing: 0.04em;
+  }
+
+  /* INFRA ROW */
+  .infra-bar {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .infra-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #9ca3af;
+    white-space: nowrap;
+    padding-right: 16px;
+    border-right: 1px solid #e5e7eb;
+  }
+
+  .infra-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .infra-tag {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 9px;
+    border-radius: 4px;
+    background: #f3f4f6;
+    color: #374151;
+    border: 1px solid #e5e7eb;
+  }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 36px;
+    padding-top: 16px;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-name {
+    font-size: 11px;
+    font-weight: 600;
+    color: #374151;
+    letter-spacing: 0.05em;
+  }
+
+  .legend {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10.5px;
+    color: #9ca3af;
+  }
+
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+  }
+
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <h1>Provider Match — System Architecture</h1>
+    <p>Event-Driven Microservices · TypeScript · Go · Kafka · OpenSearch · Kubernetes</p>
+  </div>
+
+  <!-- USER PLANE -->
+  <div class="section">
+    <div class="section-label">User Plane</div>
+    <div class="row">
+      <div class="node accent-blue">
+        <div class="node-title">React / Next.js UI</div>
+        <div class="node-desc">Standalone provider search interface with card display, filters, and ranking controls.</div>
+        <div class="node-tags">
+          <span class="tag">Next.js 14</span>
+          <span class="tag">React</span>
+          <span class="tag">MUI</span>
+        </div>
+      </div>
+      <div class="node accent-blue">
+        <div class="node-title">Backend API</div>
+        <div class="node-desc">REST API for provider queries, filtering, and ranked result retrieval. Sub-second P95 response time.</div>
+        <div class="node-tags">
+          <span class="tag">NestJS</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Node.js</span>
+        </div>
+      </div>
+      <div class="node accent-indigo">
+        <div class="node-title">Ranking Engine</div>
+        <div class="node-desc">Configurable scoring service with weighted formulas and real-time algorithm tuning.</div>
+        <div class="node-tags">
+          <span class="tag">Go</span>
+          <span class="tag">Dynamic Weights</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="connector">
+    <div class="connector-inner"><div class="conn-line"></div><div class="conn-arrow"></div><div class="conn-label">queries</div></div>
+    <div class="connector-inner"><div class="conn-line"></div><div class="conn-arrow"></div><div class="conn-label">rank / filter</div></div>
+    <div class="connector-inner"><div class="conn-line"></div><div class="conn-arrow"></div><div class="conn-label">config</div></div>
+  </div>
+
+  <!-- DATA STORES -->
+  <div class="section">
+    <div class="section-label">Data Stores</div>
+    <div class="row">
+      <div class="node accent-violet">
+        <div class="node-title">OpenSearch</div>
+        <div class="node-desc">Primary search index. 40+ provider attributes indexed for fast filtered ranking queries.</div>
+        <div class="node-tags">
+          <span class="tag">AWS Managed</span>
+          <span class="tag">40+ Attributes</span>
+        </div>
+      </div>
+      <div class="node accent-violet">
+        <div class="node-title">PostgreSQL</div>
+        <div class="node-desc">Relational store for match criteria, ranking rules, and configuration data.</div>
+        <div class="node-tags">
+          <span class="tag">Match Criteria</span>
+          <span class="tag">Rules</span>
+        </div>
+      </div>
+      <div class="node accent-violet">
+        <div class="node-title">Redis</div>
+        <div class="node-desc">Operational caching layer for app-side performance.</div>
+        <div class="node-tags">
+          <span class="tag">Cache</span>
+          <span class="tag">Session</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="connector">
+    <div class="connector-inner"><div class="conn-line"></div><div class="conn-arrow"></div><div class="conn-label">index updates</div></div>
+    <div class="connector-inner"><div class="conn-line"></div><div class="conn-arrow"></div><div class="conn-label">sync</div></div>
+    <div class="connector-inner"><div class="conn-line"></div><div class="conn-arrow"></div><div class="conn-label">events out</div></div>
+  </div>
+
+  <!-- DATA PIPELINE -->
+  <div class="section">
+    <div class="section-label">Event Pipeline</div>
+    <div class="row">
+      <div class="node accent-amber">
+        <div class="node-title">Kafka Source</div>
+        <div class="node-desc">Reads provider and work order data from S3 and publishes to Kafka. Handles historical seed and real-time stream.</div>
+        <div class="node-tags">
+          <span class="tag">Go</span>
+          <span class="tag">S3</span>
+          <span class="tag">Protobuf</span>
+        </div>
+      </div>
+      <div class="node accent-amber">
+        <div class="node-title">Kafka</div>
+        <div class="node-desc">Central event bus carrying provider, work order, assignment, and engagement streams.</div>
+        <div class="node-tags">
+          <span class="tag">AWS Managed</span>
+          <span class="tag">DLQ</span>
+        </div>
+      </div>
+      <div class="node accent-amber">
+        <div class="node-title">Kafka Sink</div>
+        <div class="node-desc">Consumes topics and writes to OpenSearch. Per-topic monitoring, DLQ flush, and metrics emission.</div>
+        <div class="node-tags">
+          <span class="tag">Go</span>
+          <span class="tag">Prometheus</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="connector">
+    <div class="connector-inner"><div class="conn-line"></div><div class="conn-arrow"></div><div class="conn-label">batch · daily</div></div>
+    <div class="connector-inner"><div class="conn-line"></div><div class="conn-arrow"></div><div class="conn-label">real-time</div></div>
+    <div class="connector-inner"><div class="conn-line"></div><div class="conn-arrow"></div><div class="conn-label">batch · daily</div></div>
+  </div>
+
+  <!-- DATA SOURCES -->
+  <div class="section">
+    <div class="section-label">Data Sources</div>
+    <div class="row">
+      <div class="node accent-green">
+        <div class="node-title">Data Platform / S3</div>
+        <div class="node-desc">dbt-transformed provider attributes. Aggregate metrics, skills, ratings, and compliance data.</div>
+        <div class="node-tags">
+          <span class="tag">dbt</span>
+          <span class="tag">Daily 5:20am UTC</span>
+        </div>
+      </div>
+      <div class="node accent-green">
+        <div class="node-title">Real-Time Events</div>
+        <div class="node-desc">Live work order updates, assignment changes, and counter-offers triggering immediate sync.</div>
+        <div class="node-tags">
+          <span class="tag">RabbitMQ</span>
+          <span class="tag">Real-Time</span>
+        </div>
+      </div>
+      <div class="node accent-green">
+        <div class="node-title">User Engagement</div>
+        <div class="node-desc">Click, scroll, and view events from the UI used for ranking signal development.</div>
+        <div class="node-tags">
+          <span class="tag">Amplitude</span>
+          <span class="tag">Warehouse Daily</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INFRA -->
+  <div style="margin-top: 24px;">
+    <div class="section-label">Infrastructure & Observability</div>
+    <div class="infra-bar">
+      <div class="infra-label">Platform</div>
+      <div class="infra-tags">
+        <span class="infra-tag">Kubernetes</span>
+        <span class="infra-tag">AWS</span>
+        <span class="infra-tag">Helm</span>
+        <span class="infra-tag">Docker</span>
+        <span class="infra-tag">CI/CD</span>
+        <span class="infra-tag">Datadog</span>
+        <span class="infra-tag">Prometheus</span>
+        <span class="infra-tag">Feature Flags</span>
+        <span class="infra-tag">Protobuf Schema Registry</span>
+        <span class="infra-tag">OpenSearch Migrations</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-name">Taylor Dugger — Provider Match Architecture</div>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#3b82f6"></div>User Plane</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#8b5cf6"></div>Data Stores</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div>Event Pipeline</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#22c55e"></div>Data Sources</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
