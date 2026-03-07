@@ -7,15 +7,32 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import { useRouter, usePathname } from 'next/navigation';
 
 export function Header() {
+  const router = useRouter();
+  const pathname = usePathname();
+
   const navLinks = [
-    { label: "Home", href: "#home" },
-    { label: "Work History", href: "#work-history" },
-    { label: "Projects", href: "/projects" },
-    { label: "Resume", href: "#resume" },
-    { label: "AI Role Fit", href: "#role-fit-section" },
+    { label: "Home", href: "/", hash: "home" },
+    { label: "Work History", href: "/", hash: "work-history" },
+    { label: "Projects", href: "/projects", hash: null },
+    { label: "Resume", href: "/", hash: "resume" },
+    { label: "AI Role Fit", href: "/", hash: "role-fit-section" },
   ];
+
+  const handleNav = (e: React.MouseEvent, href: string, hash: string | null) => {
+    e.preventDefault();
+    if (!hash) {
+      router.push(href);
+      return;
+    }
+    if (pathname === '/') {
+      document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      router.push(`${href}#${hash}`);
+    }
+  };
 
   return (
     <AppBar 
@@ -32,7 +49,7 @@ export function Header() {
             <Typography 
               variant="h6" 
               component="a" 
-              href="#home" 
+              href="/"
               sx={{ 
                 color: 'text.primary', 
                 textDecoration: 'none', 
@@ -46,9 +63,10 @@ export function Header() {
             <Box component="nav" sx={{ display: 'flex', gap: 3 }}>
                 {navLinks.map((link) => (
                     <Button 
-                        key={link.href} 
-                        component="a" 
-                        href={link.href}
+                        key={link.label}
+                        component="a"
+                        href={link.hash ? `${link.href}#${link.hash}` : link.href}
+                        onClick={(e) => handleNav(e, link.href, link.hash)}
                         disableRipple
                         sx={{ 
                             color: 'text.secondary',

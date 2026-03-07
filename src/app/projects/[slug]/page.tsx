@@ -9,12 +9,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { projects } from '@/content/projects';
 import { ProviderMatchDetail } from '@/components/projects/ProviderMatchDetail';
-
-const STATUS_COLOR: Record<string, string> = {
-  live: '#22c55e',
-  archived: '#64748b',
-  wip: '#f59e0b',
-};
+import { SupplyChainDetail } from '@/components/projects/SupplyChainDetail';
 
 export default async function ProjectDetailPage({
   params,
@@ -58,15 +53,6 @@ export default async function ProjectDetailPage({
           }}
         >
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2 }}>
-            <Box
-              sx={{
-                width: 10,
-                height: 10,
-                borderRadius: '50%',
-                bgcolor: STATUS_COLOR[project.status],
-                flexShrink: 0,
-              }}
-            />
             <Typography
               sx={{
                 fontSize: '0.7rem',
@@ -124,8 +110,9 @@ export default async function ProjectDetailPage({
 
         {/* Detail content */}
         {slug === 'provider-match' && <ProviderMatchDetail />}
+        {slug === 'supply-chain-visibility' && <SupplyChainDetail />}
 
-        {slug !== 'provider-match' && (
+        {slug !== 'provider-match' && slug !== 'supply-chain-visibility' && (
           <Paper
             elevation={0}
             sx={{

@@ -14,28 +14,18 @@ export const projects: Project[] = [
     title: 'Provider Matching Platform',
     subtitle: 'Event-Driven Microservices Migration',
     description:
-      'Architected a real-time provider search and ranking system for a 20K+ contractor marketplace. Migrated from monolith to event-driven microservices using Kafka, Go, and OpenSearch — reducing search latency by 70%.',
+      'Architected a real-time provider search and ranking system for a 20K+ contractor marketplace. Migrated from monolith to event-driven microservices using Node.JS, TypeScript, Kafka, and OpenSearch — reducing search latency by 70%.',
     tags: ['TypeScript', 'Go', 'Kafka', 'OpenSearch', 'Kubernetes', 'NestJS'],
     accentColor: '#6366f1',
     status: 'live',
   },
   {
-    slug: 'role-fit-evaluator',
-    title: 'AI Role Fit Evaluator',
-    subtitle: 'LLM-Powered Candidate Assessment',
-    description:
-      'Personal portfolio site with an AI-powered role fit evaluator that uses large language models to analyze job descriptions and score candidate alignment — replacing the static PDF resume.',
-    tags: ['Next.js', 'TypeScript', 'OpenRouter', 'React', 'MUI'],
-    accentColor: '#D0BCFF',
-    status: 'live',
-  },
-  {
     slug: 'supply-chain-visibility',
-    title: 'Supply Chain Visibility',
-    subtitle: 'Real-Time Shipment Tracking at Scale',
+    title: 'Supply Chain Visibility Platform',
+    subtitle: 'AngularJS to React Migration',
     description:
-      'Led re-architecture of a B2B supply chain visibility platform through 500% customer growth. Rebuilt frontend from AngularJS to React and built .NET APIs powering real-time tracking for 30M+ annual shipments.',
-    tags: ['.NET', 'React', 'TypeScript', 'SQL Server', 'Azure'],
+      'Led the full frontend modernization of a B2B supply chain visibility platform used by logistics operators tracking global shipments across five transport modes. Migrated from AngularJS to React through 300%+ client growth, reducing load times by 60%+ and accelerating feature delivery.',
+    tags: ['JavaScript', 'React', 'Redux', 'Node.js', 'TypeScript', 'Elasticsearch', 'Azure'],
     accentColor: '#22c55e',
     status: 'archived',
   },
