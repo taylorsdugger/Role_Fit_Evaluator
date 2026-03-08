@@ -117,6 +117,40 @@ export function ProjectsSection() {
                   </Box>
                 </Box>
               ))}
+
+              {/* More to come stub */}
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  border: '1px dashed',
+                  borderColor: 'divider',
+                  borderRadius: 2,
+                  p: 3,
+                  bgcolor: 'rgba(255,255,255,0.01)',
+                  minHeight: 180,
+                  opacity: 0.5,
+                  cursor: 'default',
+                }}
+              >
+                <Typography
+                  sx={{
+                    fontSize: '0.7rem',
+                    fontWeight: 600,
+                    letterSpacing: '0.1em',
+                    textTransform: 'uppercase',
+                    color: 'text.disabled',
+                    mb: 1,
+                  }}
+                >
+                  More to come
+                </Typography>
+                <Typography variant="body2" color="text.disabled" sx={{ textAlign: 'center', lineHeight: 1.6 }}>
+                  Additional case studies are in progress.
+                </Typography>
+              </Box>
             </Box>
 
             <Box sx={{ mt: 4 }}>
