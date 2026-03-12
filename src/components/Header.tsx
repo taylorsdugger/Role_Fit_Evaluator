@@ -45,7 +45,7 @@ export function Header() {
       }}
     >
       <Container maxWidth="lg">
-        <Toolbar disableGutters sx={{ justifyContent: 'space-between', py: 1 }}>
+        <Toolbar disableGutters sx={{ justifyContent: 'space-between', py: 1, minHeight: { xs: 56 } }}>
             <Typography 
               variant="h6" 
               component="a" 
@@ -60,7 +60,7 @@ export function Header() {
             }}>
                 TD
             </Typography>
-            <Box component="nav" sx={{ display: 'flex', gap: 3 }}>
+            <Box component="nav" sx={{ display: 'flex', gap: { xs: 1, sm: 2, md: 3 } }}>
                 {navLinks.map((link) => (
                     <Button 
                         key={link.label}
@@ -73,7 +73,7 @@ export function Header() {
                             fontWeight: 500,
                             padding: 0,
                             minWidth: 0,
-                            fontSize: '0.95rem',
+                            fontSize: { xs: '0.8rem', sm: '0.9rem', md: '0.95rem' },
                             '&:hover': { 
                                 color: 'primary.main', 
                                 bgcolor: 'transparent' 
