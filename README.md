@@ -2,12 +2,11 @@
 
 This repository contains my personal website and a small evaluation tool I built while actively exploring senior software engineering roles.
 
-The goal is not self-promotion or novelty.
 The goal is to make my thinking, judgment, and tradeoffs inspectable.
 
 ## Why this exists
 
-Hiring is noisy. Resumes are compressed summaries of complex work, and interviews are short, artificial snapshots.
+Resumes are compressed summaries of complex work, and interviews are short, artificial snapshots.
 
 This site is an attempt to reduce that gap by showing:
 
@@ -19,7 +18,11 @@ Everything here is intentionally minimal.
 
 ## What this site includes
 
-### 1. Role Fit Evaluator
+### 1. Projects
+
+A showcase of small, complete projects that demonstrate my engineering judgment and problem-solving approach.
+
+### 2. Role Fit Evaluator
 
 A single-purpose tool that evaluates how a role aligns with my background and how I would approach it.
 
@@ -35,14 +38,6 @@ It reflects how I personally evaluate roles before applying or continuing conver
 Why build this instead of a resume bot?
 Because senior engineering value is better demonstrated through reasoning than claims.
 
-## What this is not
-
-- Not a portfolio of flashy UI or side projects
-- Not optimized for SEO or growth
-- Not a demonstration of every tool I've ever used
-
-If something does not increase clarity or trust, it was left out.
-
 ## Technical approach
 
 ### Stack
@@ -52,6 +47,9 @@ If something does not increase clarity or trust, it was left out.
 - Node.js
 - React & MUI
 - Deployed on Vercel (Hobby tier)
+- Deployed and hosted on Vercel (Hobby tier)
+- OpenRouter API for AI integration
+- Tracking and Analytics with PostHog
 
 ### AI integration
 
@@ -153,17 +151,6 @@ vercel
 - Accessible by default
 - Static where possible
 - No unnecessary abstractions
-
-If something feels clever, it's probably wrong.
-
-## Tradeoffs & constraints
-
-- The evaluator is intentionally opinionated and limited in scope
-- The site favors clarity over completeness
-- There is no CMS, analytics pipeline, or auth layer
-- Everything here should be easy to explain and defend live
-
-These are conscious decisions, not omissions.
 
 ## Questions or feedback
 
