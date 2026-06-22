@@ -12,6 +12,15 @@ Senior Software Engineer with 8+ years of experience designing, building, and sc
 
 ## Professional Experience
 
+### Chronograph — Senior Software Engineer II
+*2026–Present*
+
+- Engineer on the Admin Vault team, building the internal staff tooling that powers Chronograph's private-equity portfolio-monitoring platform.
+- Own features across the Smart Capture pipeline — ML-assisted extraction and tagging of financial metrics from PE fund documents — and the multi-tenant push/pull system that distributes fund data to client tenants.
+- Work across a Ruby on Rails, GraphQL, and React/TypeScript stack on a schema-per-tenant PostgreSQL platform with Sidekiq and AWS Lambda.
+- Shipped UX improvements including single-click balance-sheet tagging (down from 3–4 clicks), tagged-value validation indicators, and AI-tag confirmation flows.
+- Tapped to lead a drag-to-select bulk-edit feature for financial-metric tagging.
+
 ### Field Nation — Staff / Senior Software Engineer (Team Lead)
 *2019–2026*
 

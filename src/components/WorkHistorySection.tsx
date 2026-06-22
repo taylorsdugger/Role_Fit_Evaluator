@@ -1,14 +1,21 @@
 "use client";
 
-import React from 'react';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Stack from '@mui/material/Stack';
+import React from "react";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Stack from "@mui/material/Stack";
 import { WorkHistoryCard, type WorkExperience } from "./WorkHistoryCard";
 import { ScrollAnimation } from "./ScrollAnimation";
 
 const workExperience: WorkExperience[] = [
+  {
+    company: "Chronograph",
+    title: "Senior Software Engineer II",
+    dates: "2026–Present",
+    description:
+      "Senior Software Engineer II on the Admin Vault team, building the internal tooling that powers Chronograph's private-equity portfolio-monitoring platform. Own features across the Smart Capture pipeline - ML-assisted extraction and tagging of financial metrics from PE fund documents, and the multi-tenant push/pull system that distributes fund data to client tenants across a Rails, GraphQL, and React/TypeScript stack. Shipped UX wins including single-click balance-sheet tagging (down from 3–4 clicks), tagged-value validation indicators, and AI-tag confirmation flows, and was tapped to lead a drag-to-select bulk-edit feature for financial-metric tagging.",
+  },
   {
     company: "Field Nation",
     title: "Staff / Senior Software Engineer (Team Lead)",
@@ -27,11 +34,21 @@ const workExperience: WorkExperience[] = [
 
 export function WorkHistorySection() {
   return (
-    <Box component="section" id="work-history" sx={{ py: { xs: 10, md: 20 }, bgcolor: 'background.paper' }}>
+    <Box
+      component="section"
+      id="work-history"
+      sx={{ py: { xs: 10, md: 20 }, bgcolor: "background.paper" }}
+    >
       <Container maxWidth="lg">
         <ScrollAnimation>
           <Box>
-            <Typography variant="h3" component="h2" fontWeight="bold" gutterBottom sx={{ mb: 6 }}>
+            <Typography
+              variant="h3"
+              component="h2"
+              fontWeight="bold"
+              gutterBottom
+              sx={{ mb: 6 }}
+            >
               Work History
             </Typography>
             <Stack spacing={4}>
