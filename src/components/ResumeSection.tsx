@@ -20,12 +20,29 @@ export function ResumeSection() {
           <Paper
             elevation={0}
             sx={{
+              position: 'relative',
+              overflow: 'hidden',
               p: { xs: 6, md: 10 },
               textAlign: 'center',
               bgcolor: 'background.paper',
               border: 1,
               borderColor: 'divider',
-              borderRadius: 4
+              borderRadius: 4,
+              '&::before': {
+                content: '""',
+                position: 'absolute',
+                top: '-40%',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '120%',
+                height: '120%',
+                background: 'radial-gradient(circle at top, rgba(124,92,255,0.16) 0%, rgba(124,92,255,0) 55%)',
+                pointerEvents: 'none',
+              },
+              '& > :not(style)': {
+                position: 'relative',
+                zIndex: 1,
+              },
             }}
           >
             <Typography variant="h3" component="h2" gutterBottom fontWeight="800">

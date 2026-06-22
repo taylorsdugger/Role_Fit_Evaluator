@@ -1,0 +1,120 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link "TD" [ref=e6] [cursor=pointer]:
+          - /url: /
+        - navigation [ref=e7]:
+          - link "Home" [ref=e8] [cursor=pointer]:
+            - /url: /#home
+          - link "Work History" [ref=e9] [cursor=pointer]:
+            - /url: /#work-history
+          - link "Projects" [ref=e10] [cursor=pointer]:
+            - /url: /projects
+          - link "Resume" [ref=e11] [cursor=pointer]:
+            - /url: /#resume
+          - link "AI Role Fit" [ref=e12] [cursor=pointer]:
+            - /url: /#role-fit-section
+    - main [ref=e13]:
+      - generic [ref=e17]:
+        - generic [ref=e18]:
+          - generic [ref=e19]:
+            - paragraph [ref=e22]: Senior Software Engineer
+            - heading "Taylor Dugger" [level=1] [ref=e23]
+            - heading "I'm a senior software engineer who builds infrastructure that makes products work at scale. Over 8 years, I've built marketplace matching systems, event-driven microservices, and platform APIs that multiple teams depend on. The kind of work where 'it just works' is the highest compliment." [level=5] [ref=e24]
+          - button "Ask AI about me" [ref=e25] [cursor=pointer]:
+            - text: Ask AI about me
+            - img [ref=e27]
+        - img "Taylor Dugger" [ref=e32]
+      - generic [ref=e36]:
+        - heading "Work History" [level=2] [ref=e37]
+        - generic [ref=e38]:
+          - article [ref=e39]:
+            - generic [ref=e40]:
+              - generic [ref=e41]:
+                - generic [ref=e42]:
+                  - heading "Staff / Senior Software Engineer (Team Lead)" [level=3] [ref=e43]
+                  - heading "Field Nation" [level=6] [ref=e44]
+                - heading "2019–2026" [level=6] [ref=e45]
+              - paragraph [ref=e46]: Senior → Staff Software Engineer | 6+ years building the marketplace platform connecting 20K+ field service providers with enterprise customers. Architected the new marketplace matching and search system that reduced search times by 70%, designed microservices handling 50K+ requests daily, and established architecture standards used across 5+ engineering teams.
+          - article [ref=e47]:
+            - generic [ref=e48]:
+              - generic [ref=e49]:
+                - generic [ref=e50]:
+                  - heading "Software Engineer I / II" [level=3] [ref=e51]
+                  - heading "C.H. Robinson" [level=6] [ref=e52]
+                - heading "2017–2019" [level=6] [ref=e53]
+              - paragraph [ref=e54]: Junior Engineer → Team Lead | Led a B2B supply chain visibility platform through 500% customer growth. Rebuilt the frontend from AngularJS to React, modernizing our tech stack and reducing load times by 60%+. Built .NET APIs powering real-time tracking for 30M+ shipments annually.
+      - generic [ref=e58]:
+        - heading "Projects" [level=2] [ref=e59]
+        - paragraph [ref=e60]: Systems I've built or led — architecture diagrams, technical decisions, and outcomes.
+        - generic [ref=e61]:
+          - link "Event-Driven Microservices Migration Provider Matching Platform Architected a real-time provider search and ranking system for a 20K+ contractor marketplace. Migrated from monolith to event-driven microservices using Node.JS, TypeScript, Kafka, and OpenSearch — reducing search latency by 70%. TypeScript Go Kafka OpenSearch" [ref=e62] [cursor=pointer]:
+            - /url: /projects/provider-match
+            - generic [ref=e63]:
+              - paragraph [ref=e64]: Event-Driven Microservices Migration
+              - img [ref=e65]
+            - heading "Provider Matching Platform" [level=6] [ref=e67]
+            - paragraph [ref=e68]: Architected a real-time provider search and ranking system for a 20K+ contractor marketplace. Migrated from monolith to event-driven microservices using Node.JS, TypeScript, Kafka, and OpenSearch — reducing search latency by 70%.
+            - generic [ref=e69]:
+              - generic [ref=e71]: TypeScript
+              - generic [ref=e73]: Go
+              - generic [ref=e75]: Kafka
+              - generic [ref=e77]: OpenSearch
+          - link "AngularJS to React Migration Supply Chain Visibility Platform Led the full frontend modernization of a B2B supply chain visibility platform used by logistics operators tracking global shipments across five transport modes. Migrated from AngularJS to React through 300%+ client growth, reducing load times by 60%+ and accelerating feature delivery. JavaScript React Redux Node.js" [ref=e78] [cursor=pointer]:
+            - /url: /projects/supply-chain-visibility
+            - generic [ref=e79]:
+              - paragraph [ref=e80]: AngularJS to React Migration
+              - img [ref=e81]
+            - heading "Supply Chain Visibility Platform" [level=6] [ref=e83]
+            - paragraph [ref=e84]: Led the full frontend modernization of a B2B supply chain visibility platform used by logistics operators tracking global shipments across five transport modes. Migrated from AngularJS to React through 300%+ client growth, reducing load times by 60%+ and accelerating feature delivery.
+            - generic [ref=e85]:
+              - generic [ref=e87]: JavaScript
+              - generic [ref=e89]: React
+              - generic [ref=e91]: Redux
+              - generic [ref=e93]: Node.js
+          - generic [ref=e94]:
+            - paragraph [ref=e95]: More to come
+            - paragraph [ref=e96]: Additional case studies are in progress.
+        - link "View all projects →" [ref=e98] [cursor=pointer]:
+          - /url: /projects
+      - generic [ref=e102]:
+        - heading "Resume" [level=2] [ref=e103]
+        - paragraph [ref=e104]: Get a comprehensive overview of my professional background, skills, and achievements.
+        - link "Download Resume" [ref=e105] [cursor=pointer]:
+          - /url: /Taylor_Dugger__Resume.pdf
+          - text: Download Resume
+          - img [ref=e107]
+      - generic [ref=e111]:
+        - generic [ref=e112]:
+          - heading "AI Role Fit Evaluator" [level=2] [ref=e113]
+          - heading "Paste a job description below to see how my skills and experience match the role. This uses my actual resume and work history to generate a personalized analysis." [level=6] [ref=e114]
+        - generic [ref=e116]:
+          - generic [ref=e117]:
+            - generic:
+              - text: Job Description
+              - generic: "*"
+            - generic [ref=e118]:
+              - textbox "Job Description" [ref=e119]:
+                - /placeholder: Paste the full job description here...
+              - group:
+                - generic: Job Description *
+          - button "Evaluate Role Fit" [disabled]
+    - contentinfo [ref=e120]:
+      - generic [ref=e121]:
+        - generic [ref=e122]:
+          - generic [ref=e123]:
+            - heading "Taylor Dugger" [level=6] [ref=e124]
+            - paragraph [ref=e125]: Senior Software Engineer
+          - generic [ref=e126]:
+            - heading [level=6]
+            - generic [ref=e127]:
+              - link "GitHub" [ref=e128] [cursor=pointer]:
+                - /url: https://github.com/taylorsdugger
+              - link "LinkedIn" [ref=e129] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/taylor-dugger
+        - generic [ref=e130]:
+          - paragraph [ref=e131]: © 2026 Taylor Dugger. All rights reserved.
+          - text: Built with Next.js & React. Deployed on Vercel with PostHog analytics.
+  - button "Open Next.js Dev Tools" [ref=e137] [cursor=pointer]:
+    - img [ref=e138]

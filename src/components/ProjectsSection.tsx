@@ -49,13 +49,17 @@ export function ProjectsSection() {
                     borderColor: 'divider',
                     borderRadius: 2,
                     p: 3,
-                    bgcolor: 'rgba(255,255,255,0.02)',
+                    bgcolor: 'var(--surface-1)',
                     borderTop: `3px solid ${project.accentColor}`,
                     transition: 'transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease',
                     '&:hover': {
                       transform: 'translateY(-5px)',
-                      boxShadow: `0 16px 48px rgba(0,0,0,0.35)`,
+                      boxShadow: `0 18px 48px rgba(0,0,0,0.45), 0 0 28px ${project.accentColor}33`,
                       borderColor: project.accentColor,
+                    },
+                    '&:hover .project-arrow': {
+                      color: project.accentColor,
+                      transform: 'translate(2px, -2px)',
                     },
                   }}
                 >
@@ -74,7 +78,7 @@ export function ProjectsSection() {
                     >
                       {project.subtitle}
                     </Typography>
-                    <ArrowOutwardIcon sx={{ fontSize: 15, color: 'text.disabled', flexShrink: 0, mt: 0.25 }} />
+                    <ArrowOutwardIcon className="project-arrow" sx={{ fontSize: 15, color: 'text.disabled', flexShrink: 0, mt: 0.25, transition: 'color 0.22s ease, transform 0.22s ease' }} />
                   </Box>
 
                   {/* Title */}
@@ -106,7 +110,7 @@ export function ProjectsSection() {
                         sx={{
                           fontSize: '0.68rem',
                           height: 22,
-                          bgcolor: 'rgba(255,255,255,0.05)',
+                          bgcolor: 'var(--surface-3)',
                           color: 'text.secondary',
                           border: '1px solid',
                           borderColor: 'divider',
@@ -129,7 +133,7 @@ export function ProjectsSection() {
                   borderColor: 'divider',
                   borderRadius: 2,
                   p: 3,
-                  bgcolor: 'rgba(255,255,255,0.01)',
+                  bgcolor: 'var(--surface-faint)',
                   minHeight: 180,
                   opacity: 0.5,
                   cursor: 'default',

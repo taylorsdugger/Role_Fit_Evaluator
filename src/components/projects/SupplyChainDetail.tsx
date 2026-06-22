@@ -33,7 +33,7 @@ function Deliverable({ title, desc }: DeliverableProps) {
         borderRadius: 2,
         p: 2,
         borderLeft: `3px solid ${ACCENT}`,
-        bgcolor: 'rgba(255,255,255,0.03)',
+        bgcolor: 'var(--surface-2)',
       }}
     >
       <Typography sx={{ fontSize: '0.8125rem', fontWeight: 600, color: 'text.primary', mb: 0.5 }}>
@@ -63,7 +63,7 @@ function Screenshot({ src, alt, caption, onExpand }: ScreenshotProps) {
           borderColor: 'divider',
           borderRadius: 2,
           overflow: 'hidden',
-          bgcolor: 'rgba(255,255,255,0.02)',
+          bgcolor: 'var(--surface-1)',
           cursor: 'pointer',
           '&:hover .expand-btn': { opacity: 1 },
           '&:hover img': { opacity: 0.88 },
@@ -216,7 +216,7 @@ export function SupplyChainDetail() {
             borderColor: 'divider',
             borderRadius: 2,
             p: 3,
-            bgcolor: 'rgba(255,255,255,0.03)',
+            bgcolor: 'var(--surface-2)',
             borderTop: `3px solid ${ACCENT}`,
           }}
         >
@@ -309,7 +309,7 @@ export function SupplyChainDetail() {
                 borderColor: 'divider',
                 borderRadius: 2,
                 p: 2.5,
-                bgcolor: 'rgba(255,255,255,0.02)',
+                bgcolor: 'var(--surface-1)',
                 display: 'flex',
                 flexDirection: { xs: 'column', sm: 'row' },
                 gap: { xs: 1, sm: 3 },
@@ -359,7 +359,7 @@ export function SupplyChainDetail() {
                 borderColor: 'divider',
                 borderRadius: 2,
                 p: 2.5,
-                bgcolor: 'rgba(255,255,255,0.03)',
+                bgcolor: 'var(--surface-2)',
                 borderTop: `3px solid ${ACCENT}`,
               }}
             >
@@ -387,7 +387,7 @@ export function SupplyChainDetail() {
               sx={{
                 fontSize: '0.6875rem',
                 height: 24,
-                bgcolor: 'rgba(255,255,255,0.05)',
+                bgcolor: 'var(--surface-3)',
                 color: 'text.secondary',
                 border: '1px solid',
                 borderColor: 'divider',

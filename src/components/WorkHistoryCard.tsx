@@ -19,16 +19,18 @@ interface WorkHistoryCardProps {
 
 export function WorkHistoryCard({ experience }: WorkHistoryCardProps) {
   return (
-    <Card 
+    <Card
         component="article"
         elevation={0}
-        sx={{ 
-            bgcolor: 'background.paper', 
-            border: 1, 
+        sx={{
+            background: 'linear-gradient(180deg, var(--surface-2) 0%, var(--surface-faint) 100%)',
+            border: 1,
             borderColor: 'divider',
-            transition: 'border-color 0.3s',
+            transition: 'border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
             '&:hover': {
                 borderColor: 'primary.main',
+                transform: 'translateY(-4px)',
+                boxShadow: '0 16px 40px rgba(124,92,255,0.18)',
             }
         }}
     >

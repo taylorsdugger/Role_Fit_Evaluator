@@ -37,7 +37,7 @@ function ArchNode({ title, desc, tags, accent }: ArchNodeProps) {
         borderRadius: 2,
         p: 2,
         borderTop: `3px solid ${accent}`,
-        bgcolor: 'rgba(255,255,255,0.03)',
+        bgcolor: 'var(--surface-2)',
       }}
     >
       <Typography
@@ -57,7 +57,7 @@ function ArchNode({ title, desc, tags, accent }: ArchNodeProps) {
             sx={{
               fontSize: '0.65rem',
               height: 20,
-              bgcolor: 'rgba(255,255,255,0.06)',
+              bgcolor: 'var(--surface-4)',
               color: 'text.secondary',
               border: '1px solid',
               borderColor: 'divider',
@@ -162,7 +162,7 @@ export function ProviderMatchDetail() {
             borderColor: 'divider',
             borderRadius: 2,
             overflow: 'hidden',
-            bgcolor: 'rgba(255,255,255,0.02)',
+            bgcolor: 'var(--surface-1)',
             cursor: 'pointer',
             '&:hover .expand-btn': { opacity: 1 },
             '&:hover img': { opacity: 0.88 },
@@ -390,7 +390,7 @@ export function ProviderMatchDetail() {
               alignItems: 'center',
               gap: 2,
               flexWrap: 'wrap',
-              bgcolor: 'rgba(255,255,255,0.03)',
+              bgcolor: 'var(--surface-2)',
             }}
           >
             <Typography
@@ -421,7 +421,7 @@ export function ProviderMatchDetail() {
                   sx={{
                     fontSize: '0.6875rem',
                     height: 24,
-                    bgcolor: 'rgba(255,255,255,0.06)',
+                    bgcolor: 'var(--surface-4)',
                     color: 'text.secondary',
                     border: '1px solid',
                     borderColor: 'divider',

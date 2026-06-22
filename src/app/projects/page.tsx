@@ -41,8 +41,10 @@ export default function ProjectsPage() {
             fontWeight="bold"
             sx={{
               mb: 2,
-              background: 'linear-gradient(to right, #fff, #ccc)',
+              background: 'var(--grad-text)',
               backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
               textFillColor: 'transparent',
             }}
           >
@@ -74,7 +76,7 @@ export default function ProjectsPage() {
                 borderColor: 'divider',
                 borderRadius: 2,
                 p: 3.5,
-                bgcolor: 'rgba(255,255,255,0.02)',
+                bgcolor: 'var(--surface-1)',
                 borderTop: `3px solid ${project.accentColor}`,
                 transition: 'transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease',
                 '&:hover': {
@@ -135,7 +137,7 @@ export default function ProjectsPage() {
                     sx={{
                       fontSize: '0.68rem',
                       height: 22,
-                      bgcolor: 'rgba(255,255,255,0.05)',
+                      bgcolor: 'var(--surface-3)',
                       color: 'text.secondary',
                       border: '1px solid',
                       borderColor: 'divider',
@@ -158,7 +160,7 @@ export default function ProjectsPage() {
               borderColor: 'divider',
               borderRadius: 2,
               p: 3.5,
-              bgcolor: 'rgba(255,255,255,0.01)',
+              bgcolor: 'var(--surface-faint)',
               minHeight: 200,
               opacity: 0.5,
               cursor: 'default',

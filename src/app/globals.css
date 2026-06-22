@@ -6,7 +6,79 @@ body {
   width: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   text-decoration: none;
   color: inherit;
+}
+
+/* ---- Scheme-aware design tokens ----
+   These flip automatically because MUI toggles the `.dark` / `.light`
+   class on <html> (colorSchemeSelector: 'class'). Default = dark. */
+:root,
+html.dark {
+  color-scheme: dark;
+  --surface-1: rgba(255, 255, 255, 0.02);
+  --surface-2: rgba(255, 255, 255, 0.03);
+  --surface-3: rgba(255, 255, 255, 0.05);
+  --surface-4: rgba(255, 255, 255, 0.06);
+  --surface-faint: rgba(255, 255, 255, 0.01);
+  --surface-line: rgba(255, 255, 255, 0.12);
+  --glass-bg: rgba(11, 11, 15, 0.6);
+  --grad-text: linear-gradient(120deg, #ffffff 0%, #e9d5ff 55%, #b794f6 100%);
+  --scrollbar-thumb: #2a2a33;
+  --scrollbar-thumb-hover: #3a3a47;
+  --selection-bg: rgba(183, 148, 246, 0.32);
+  --selection-fg: #ffffff;
+}
+
+html.light {
+  color-scheme: light;
+  --surface-1: rgba(0, 0, 0, 0.02);
+  --surface-2: rgba(0, 0, 0, 0.03);
+  --surface-3: rgba(0, 0, 0, 0.05);
+  --surface-4: rgba(0, 0, 0, 0.06);
+  --surface-faint: rgba(0, 0, 0, 0.015);
+  --surface-line: rgba(0, 0, 0, 0.12);
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --grad-text: linear-gradient(120deg, #1a1330 0%, #6d28d9 60%, #7c5cff 100%);
+  --scrollbar-thumb: #cdcdd8;
+  --scrollbar-thumb-hover: #b3b3c2;
+  --selection-bg: rgba(124, 92, 255, 0.22);
+  --selection-fg: #181820;
+}
+
+::selection {
+  background: var(--selection-bg);
+  color: var(--selection-fg);
+}
+
+/* Custom scrollbar — subtle, on-brand, scheme-aware */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+  background-clip: content-box;
 }

@@ -71,8 +71,10 @@ export default async function ProjectDetailPage({
             fontWeight="bold"
             sx={{
               mb: 2,
-              background: 'linear-gradient(to right, #fff, #ccc)',
+              background: 'var(--grad-text)',
               backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
               textFillColor: 'transparent',
               lineHeight: 1.15,
             }}
@@ -97,7 +99,7 @@ export default async function ProjectDetailPage({
                 sx={{
                   fontSize: '0.75rem',
                   height: 26,
-                  bgcolor: 'rgba(255,255,255,0.06)',
+                  bgcolor: 'var(--surface-4)',
                   color: 'text.secondary',
                   border: '1px solid',
                   borderColor: 'divider',
@@ -120,7 +122,7 @@ export default async function ProjectDetailPage({
               borderColor: 'divider',
               borderRadius: 2,
               p: { xs: 4, md: 6 },
-              bgcolor: 'rgba(255,255,255,0.02)',
+              bgcolor: 'var(--surface-1)',
               textAlign: 'center',
             }}
           >
