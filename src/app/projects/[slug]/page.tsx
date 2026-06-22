@@ -19,7 +19,8 @@ export default async function ProjectDetailPage({
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
 
-  if (!project) notFound();
+  // Personal projects link out externally — only work projects have case-study pages.
+  if (!project || project.category !== 'work') notFound();
 
   return (
     <Box sx={{ py: { xs: 8, md: 14 }, minHeight: '100vh' }}>
@@ -140,5 +141,5 @@ export default async function ProjectDetailPage({
 }
 
 export async function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
+  return projects.filter((p) => p.category === 'work').map((p) => ({ slug: p.slug }));
 }
