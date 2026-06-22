@@ -55,8 +55,8 @@ export function Header() {
 
   const navLinks = [
     { label: "Home", href: "/", hash: "home" },
-    { label: "Work History", href: "/", hash: "work-history" },
     { label: "Projects", href: "/projects", hash: null },
+    { label: "Work History", href: "/", hash: "work-history" },
     { label: "Resume", href: "/", hash: "resume" },
     { label: "AI Role Fit", href: "/", hash: "role-fit-section" },
   ];

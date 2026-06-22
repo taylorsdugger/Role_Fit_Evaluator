@@ -5,7 +5,6 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Alert from '@mui/material/Alert';
-import { track } from '@vercel/analytics';
 import { usePostHog } from 'posthog-js/react';
 import { type ProfileType } from "@/lib/profiles";
 import { RoleFitForm } from "./RoleFitForm";

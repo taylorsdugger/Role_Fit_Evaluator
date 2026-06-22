@@ -170,7 +170,7 @@ export function ProviderMatchDetail() {
           onClick={() => setLightboxOpen(true)}
         >
           <Image
-            src="/images/provider-match-visual.png"
+            src="/images/provider-match-visual.jpg"
             alt="Provider Match system design visual"
             width={880}
             height={0}
@@ -249,7 +249,7 @@ export function ProviderMatchDetail() {
             <CloseIcon fontSize="small" />
           </IconButton>
           <Image
-            src="/images/provider-match-visual.png"
+            src="/images/provider-match-visual.jpg"
             alt="Provider Match system design visual — full size"
             width={1400}
             height={0}

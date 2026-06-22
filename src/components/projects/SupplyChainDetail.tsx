@@ -139,16 +139,16 @@ export function SupplyChainDetail() {
         <SectionLabel>Product Screenshots</SectionLabel>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
           <Screenshot
-            src="/images/vision.png"
+            src="/images/vision.jpg"
             alt="Supply chain visibility dashboard"
             caption="Shipment tracking dashboard — real-time shipment search across ground, ocean, air, parcel, and intermodal modes"
-            onExpand={() => setLightbox('/images/vision.png')}
+            onExpand={() => setLightbox('/images/vision.jpg')}
           />
           <Screenshot
-            src="/images/vision2.png"
+            src="/images/vision2.jpg"
             alt="Supply chain visibility map view"
             caption="Interactive mapping — Bing Maps integration with live shipment pins, weather radar overlay, and disruption layers"
-            onExpand={() => setLightbox('/images/vision2.png')}
+            onExpand={() => setLightbox('/images/vision2.jpg')}
           />
         </Box>
       </Box>
